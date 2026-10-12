@@ -1,9 +1,11 @@
-﻿using Application.Contracts.Identity;
+using Application.Contracts.Identity;
 using Application.Models.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
+    [ApiController]
+    [Route("api/v1/[controller]")]
     public class AccountController : ControllerBase
     {
         private readonly IAuthService _authService;

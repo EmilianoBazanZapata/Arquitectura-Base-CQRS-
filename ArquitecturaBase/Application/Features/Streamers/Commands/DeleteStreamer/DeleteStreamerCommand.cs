@@ -1,4 +1,4 @@
-﻿using Application.Exceptions;
+using Application.Exceptions;
 using AutoMapper;
 using Common.Interfaces;
 using Domain.Entities;
@@ -25,9 +25,9 @@ namespace Application.Features.Streamers.Commands.DeleteStreamer
             _dbContext = dbContext;
         }
 
-        async Task<Unit> IRequestHandler<DeleteStreamerCommand, Unit>.Handle(DeleteStreamerCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(DeleteStreamerCommand request, CancellationToken cancellationToken)
         {
-            var streamerToDelete = await _dbContext.Streamers.FirstOrDefaultAsync(s => s.Id == request.Id);
+            var streamerToDelete = await _dbContext.Streamers.FirstOrDefaultAsync(s => s.Id == request.Id, cancellationToken);
 
             if (streamerToDelete is null)
             {

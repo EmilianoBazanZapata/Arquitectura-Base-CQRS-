@@ -1,4 +1,4 @@
-﻿namespace Application.Features.Streamers.Commands.Queries.GetStreamerByName
+﻿namespace Application.Features.Streamers.Queries.GetStreamerByName
 {
     public class StreamersVM
     {

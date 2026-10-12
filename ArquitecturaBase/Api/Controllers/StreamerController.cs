@@ -1,7 +1,7 @@
 ﻿using Application.Features.Streamers.Commands.CreateStreamer;
 using Application.Features.Streamers.Commands.DeleteStreamer;
-using Application.Features.Streamers.Commands.Queries.GetStreamerByName;
-using Application.Features.Streamers.Commands.Queries.GetStreamerList;
+using Application.Features.Streamers.Queries.GetStreamerByName;
+using Application.Features.Streamers.Queries.GetStreamerList;
 using Application.Features.Streamers.Commands.UpdateStreamer;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;

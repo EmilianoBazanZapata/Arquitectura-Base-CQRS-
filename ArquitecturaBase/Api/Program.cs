@@ -11,7 +11,6 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddAplicationServices();
-//builder.Services.ConfigureIdentityServices(builder.Configuration);
 
 builder.Services.AddCors(options =>
 {
@@ -32,11 +31,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseMiddleware<ExceptionMiddleware>();
 
+// CORS has to run before authentication so browser preflight requests are answered.
+app.UseCors("CorsPolicy");
+
 app.UseAuthentication();
 
 app.UseAuthorization();
-
-app.UseCors("CorsPolicy");
 
 app.MapControllers();
 

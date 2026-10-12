@@ -1,0 +1,17 @@
+# Build output
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+
+# IDE and user-specific files
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+*.userprefs
+
+# Test results and logs
+TestResults/
+*.log
